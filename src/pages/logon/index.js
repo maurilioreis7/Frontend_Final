@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../global.css'
+import '../../global.css';
 import logo from '../../assets/img/logo2.jpg'
 import {useNavigate} from 'react-router-dom'
 import api from "../../server/api";

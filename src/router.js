@@ -2,7 +2,8 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 
 import Logon from './pages/logon'
 import Dashboard from './pages/dashboard'
-
+import Cliente from './pages/cliente'
+import Cadastrocliente from './pages/cadastroCliente'
 
 
 export default function Rotas(){
@@ -12,6 +13,8 @@ export default function Rotas(){
 
         <Route path="/" exact element={<Logon />} />
         <Route path="/dashboard"  element={<Dashboard />} />
+        <Route path="/cliente"  element={<Cliente />} />
+        <Route path="/cadastroCliente"  element={<Cadastrocliente />} />
 
         </Routes>
      

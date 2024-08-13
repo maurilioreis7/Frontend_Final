@@ -1,5 +1,5 @@
 import React from "react";
-import '../../global.css'
+import '../../global.css';
 import Head from "../componentes/head";
 import Menu from "../componentes/menu";
 import Barrasuperior from "../componentes/barrasuperior";
