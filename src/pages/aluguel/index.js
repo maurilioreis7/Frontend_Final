@@ -8,16 +8,16 @@ import { Link, useNavigate } from "react-router-dom";
 import {FiEdit,FiTrash, FiAlignJustify } from "react-icons/fi";
 import Barrasuperior from "../componentes/barrasuperior";
 
-export default function Produto(){
+export default function Aluguel(){
 
     const navigate = useNavigate();
-    const [produtos,setProdutos] = useState([]);
+    const [aluguels,setAluguels] = useState([]);
     const [quantidade,setQuantidade] = useState(0);
     
-    function mostrarprodutos(){
-        const banco = JSON.parse(localStorage.getItem("produtos")|| "[]")
+    function mostraraluguels(){
+        const banco = JSON.parse(localStorage.getItem("aluguels")|| "[]")
         setQuantidade(banco.length)
-        setProdutos(banco);
+        setAluguels(banco);
 
 
     }
@@ -27,7 +27,7 @@ export default function Produto(){
     //    }
 
     useEffect(()=>{
-        mostrarprodutos()
+        mostraraluguels()
     },[])
 
     return(
@@ -39,13 +39,18 @@ export default function Produto(){
                 </div>
                 <div className="main">
                    <FiAlignJustify className="btn-menu"/>
-                  <Head title="Lista de Produto"  />
+                  <Head title="Lista de aluguels"  />
                   <Link to="/cadastrocliente" className='btn-novo'>Novo</Link> 
                    <table>
                     <tr>
                      <th>ID</th>
-                     <th>Descricao</th>
-                     <th>Valor Unitário</th>
+                     <th>Id_produto</th>
+                     <th>Quantidade_produto</th>
+                     <th>Quantidade_dia</th>
+                     <th>Valor_unitario</th>
+                     <th>valor_total</th>
+                     <th>Data_contrato</th>
+                     <th>Vencimento</th>
                      <th></th>
                      <th></th>
                     </tr>

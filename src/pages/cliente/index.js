@@ -1,11 +1,12 @@
-import { useState } from "react"
-import '../../global.css';
+import React,{useState,useEffect} from "react";
+import '../../global.css'
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Head from "../componentes/head";
 import Menu from "../componentes/menu";
-import Barrasuperior from "../componentes/barrasuperior";
-import {useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom";
 import {FiEdit,FiTrash, FiAlignJustify } from "react-icons/fi";
-
+import Barrasuperior from "../componentes/barrasuperior";
 
 export default function Cliente(){
 
@@ -17,11 +18,17 @@ export default function Cliente(){
         const banco = JSON.parse(localStorage.getItem("clientes")|| "[]")
         setQuantidade(banco.length)
         setClientes(banco);
+
+
     }
     // function editarcliente(id){
     //     alert(`Estou editando clienete de id:${id}`)
     //     navigate(`/editarusuario/${id}`)
     //    }
+
+    useEffect(()=>{
+        mostrarclientes()
+    },[])
 
     return(
         <div className="dashboard-container">
@@ -33,7 +40,7 @@ export default function Cliente(){
                 <div className="main">
                    <FiAlignJustify className="btn-menu"/>
                   <Head title="Lista de Cliente"  />
-                  {/* <Link to="/cadastrocliente" className='btn-novo'>Novo</Link>  */}
+                  <Link to="/cadastrocliente" className='btn-novo'>Novo</Link> 
                    <table>
                     <tr>
                      <th>ID</th>

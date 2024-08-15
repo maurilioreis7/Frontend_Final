@@ -5,7 +5,7 @@ import Menu from "../componentes/menu";
 import Barrasuperior from "../componentes/barrasuperior";
 import {useNavigate} from 'react-router-dom'
 
-export default function cadastrocliente(){
+export default function Cadastrocliente(){
 
     const navigate = useNavigate();
     const [nome,setNome] = useState("")
