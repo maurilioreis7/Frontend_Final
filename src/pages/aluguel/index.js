@@ -1,12 +1,13 @@
 import React,{useState,useEffect} from "react";
 import '../../global.css'
-import { confirmAlert } from 'react-confirm-alert'; // Import
+// import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Head from "../componentes/head";
 import Menu from "../componentes/menu";
 import { Link, useNavigate } from "react-router-dom";
 import {FiEdit,FiTrash, FiAlignJustify } from "react-icons/fi";
 import Barrasuperior from "../componentes/barrasuperior";
+
 
 export default function Aluguel(){
 
@@ -39,8 +40,8 @@ export default function Aluguel(){
                 </div>
                 <div className="main">
                    <FiAlignJustify className="btn-menu"/>
-                  <Head title="Lista de aluguels"  />
-                  <Link to="/cadastrocliente" className='btn-novo'>Novo</Link> 
+                  <Head title="Lista de alugueis"  />
+                  <Link to="/cadastroaluguel" className='btn-novo'>Novo</Link> 
                    <table>
                     <tr>
                      <th>ID</th>
@@ -56,18 +57,16 @@ export default function Aluguel(){
                     </tr>
                     
                         {
-                          produtos.map((linha)=>{
+                          aluguels.map((linha)=>{
                              return(
                                 <tr key={linha.toString()}>
                                 <td>{linha.id}</td>
-                                <td>{linha.descricao}</td>
+                                <td>{linha.id_produto}</td>
+                                <td>{linha.quantidade_produto}</td>
+                                <td>{linha.quantidade_dia}</td>
                                 <td>{linha.valor_unitario}</td>
-                                {/* <td>
-                                    <FiEdit size={24} color="blue" cursor="pointer" onClick={(e)=>{editarcliente(linha.id)}} />
-                                </td>
-                                <td>
-                                    <FiTrash size={24} color="red" cursor="pointer" onClick={(e)=>{excluircliente(linha.id)}}/>
-                                </td> */}
+                                <td>{linha.valor_total}</td>
+                                <td>{linha.vencimento}</td>
                                 </tr>
                              )
                           })  

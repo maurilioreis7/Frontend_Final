@@ -10,6 +10,7 @@ export default function Menu(){
             { <Link to="/dashboard" className='link'><FiHome className='icons-menu' size={24}/>Home</Link> }
             <Link to="/cliente" className='link'><FiUser className='icons-menu' size={24}/>Cliente</Link>
             <Link to="/produto" className='link'><FiTag className='icons-menu' size={24}/>Produto</Link>
+            <Link to="/aluguel" className='link'><FiGrid className='icons-menu' size={24}/>Aluguel</Link>
         
             </nav>
         </div>

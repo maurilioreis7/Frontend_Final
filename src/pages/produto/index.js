@@ -40,7 +40,7 @@ export default function Produto(){
                 <div className="main">
                    <FiAlignJustify className="btn-menu"/>
                   <Head title="Lista de Produto"  />
-                  <Link to="/cadastrocliente" className='btn-novo'>Novo</Link> 
+                  <Link to="/cadastroproduto" className='btn-novo'>Novo</Link> 
                    <table>
                     <tr>
                      <th>ID</th>
